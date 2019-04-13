@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b320c438-5135-4023-85d8-c6b0de88ba99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/Plaid/Plaid.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/Plaid/plaid-setting.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Account/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/Account/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/.firebaserc" beforeDir="false" afterPath="$PROJECT_DIR$/config/Firebase/.firebaserc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/financegenie-f595de8d1659.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/Firebase/financegenie-f595de8d1659.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/Firebase/firebase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/firebase.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/Firebase/firebase.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/firestore.indexes.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/Firebase/firestore.indexes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/firestore.rules" beforeDir="false" afterPath="$PROJECT_DIR$/config/Firebase/firestore.rules" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-    </list>
+    <list default="true" id="b320c438-5135-4023-85d8-c6b0de88ba99" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -80,7 +68,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App/Account/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="-462">
               <caret column="28" selection-start-column="28" selection-end-column="28" />
             </state>
           </provider>
@@ -277,7 +265,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11472000" />
+    <option name="totallyTimeSpent" value="11822000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
@@ -371,7 +359,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Account/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="-462">
           <caret column="28" selection-start-column="28" selection-end-column="28" />
         </state>
       </provider>
