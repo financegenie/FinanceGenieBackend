@@ -1,5 +1,5 @@
 # FinanceGenieBackend
 Bitcamp hackathon project api
 
-#Endpoint
+# Endpoint
 https://finance-genie.herokuapp.com
