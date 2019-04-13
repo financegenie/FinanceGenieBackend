@@ -4,7 +4,7 @@
   "description": "Node JS api for finance project",
   "main": "main.js",
   "scripts": {
-      "start": "nodemon main.js",
+    "start": "nodemon server.js",
     "test": "npm test"
   },
   "repository": {
@@ -21,6 +21,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "firebase": "^5.9.4",
-    "nodemon": "^1.18.11"
+    "nodemon": "^1.18.11",
+    "plaid": "^3.1.1"
   }
 }
