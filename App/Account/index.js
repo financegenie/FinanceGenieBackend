@@ -104,7 +104,8 @@ module.exports = function(app, db) {
                 else {
                     db.collection('accounts').doc(req.body.accessToken).set({
                         userID : req.body.userID,
-                        account_id : req.body.accountID
+                        accountID : req.body.accountID,
+                        accessToken : req.body.accessToken
                     }).catch(error => {
                         res.send(error)
                     }).then(() => {
