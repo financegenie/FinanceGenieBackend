@@ -33,6 +33,58 @@ module.exports = function(app, db) {
         })
     });
 
+    app.post('/account/get_access_token', (req, res) => {
+        if (!(req && req.body)) {
+            res.send({
+                "Status Code": 400,
+                "Error Message": "Invalid body"
+            });
+            return
+        }
+
+        let PUBLIC_TOKEN = req.body.public_token;
+        plaidClient.exchangePublicToken(PUBLIC_TOKEN, function(error,
+                                                               tokenResponse) {
+            if (error != null) {
+                console.log('Could not exchange public_token!' + '\n' +
+                    error);
+                return res.json({error: error});
+            }
+            let ACCESS_TOKEN = tokenResponse.access_token;
+            let ITEM_ID = tokenResponse.item_id;
+            console.log('Access Token: ' + ACCESS_TOKEN);
+            console.log('Item ID: ' + ITEM_ID);
+            res.send({
+                'error': false,
+                'Access Token': ACCESS_TOKEN,
+            });
+        });
+    });
+
+    app.post('/account/get_balance', (req,res) => {
+        if (!(req && req.body)) {
+            res.send({
+                "Status Code": 400,
+                "Error Message": "Invalid body"
+            });
+        }
+
+        plaidClient.getBalance(req.body.accessToken, (err, result) => {
+            console.log(result.accounts)
+            if (err) {
+                res.send(err)
+            } else{
+                const account = result.accounts.find(x => x.account_id === req.body.accountID);
+                res.send({
+                    "Status code": 200,
+                    "account_id": account["account_id"],
+                    "balance": account["balances"],
+                    "name": account["name"]
+                })
+            }
+        })
+    });
+
     app.post('/account/insert_account', (req, res) => {
         if (!(req && req.body)) {
             res.send({
@@ -62,7 +114,7 @@ module.exports = function(app, db) {
                     })
                 }
             }).catch(error => {
-                res.send(error)
+            res.send(error)
         })
     });
 
@@ -95,65 +147,12 @@ module.exports = function(app, db) {
                 })
 
             }).catch(error => {
-                res.send({
-                    "Status Code": 500,
-                    "Error": error
-                })
+            res.send({
+                "Status Code": 500,
+                "Error": error
+            })
         })
     });
-
-    app.post('/account/get_balance', (req,res) => {
-        if (!(req && req.body)) {
-            res.send({
-                "Status Code": 400,
-                "Error Message": "Invalid body"
-            });
-        }
-
-        plaidClient.getBalance(req.body.accessToken, (err, result) => {
-            console.log(result.accounts)
-            if (err) {
-                res.send(err)
-            } else{
-                const account = result.accounts.find(x => x.account_id === req.body.accountID);
-                res.send({
-                    "Status code": 200,
-                    "account_id": account["account_id"],
-                    "balance": account["balances"],
-                    "name": account["name"]
-                })
-            }
-        })
-    });
-
-    app.post('/account/get_access_token', (req, res) => {
-        if (!(req && req.body)) {
-            res.send({
-                "Status Code": 400,
-                "Error Message": "Invalid body"
-            });
-            return
-        }
-
-        let PUBLIC_TOKEN = req.body.public_token;
-        plaidClient.exchangePublicToken(PUBLIC_TOKEN, function(error,
-                                                          tokenResponse) {
-            if (error != null) {
-                console.log('Could not exchange public_token!' + '\n' +
-                    error);
-                return res.json({error: error});
-            }
-            let ACCESS_TOKEN = tokenResponse.access_token;
-            let ITEM_ID = tokenResponse.item_id;
-            console.log('Access Token: ' + ACCESS_TOKEN);
-            console.log('Item ID: ' + ITEM_ID);
-            res.send({
-                'error': false,
-                'Access Token': ACCESS_TOKEN,
-            });
-        });
-    });
-
 
 
     app.get('/account/', (req, res) => {
