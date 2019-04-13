@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "financegenie",
+  "private_key_id": "f595de8d1659199d4debf18b03949e8cac091a60",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCwtKomRAWHxzU0\n5n0ZVEHGTTodyek0QFrE4ZsIj9LyVWaO5/Ww0MJREt3w+eW+KmXouj7TYgLMwUYD\nbNzKfrl8zOiBhfcz02NQVVAGiOP0Zemzr0o5lOx+SJ5+gxrcoFRugqQ9aeNpKz9O\nxYiQoaGcdlNvTIdreZ7LcEBPx253YNYrrI0zdMNQyv0FqAgWYP5ExtWGiCKl0zZx\nUtBLkC9WBoRrKyN7Q6MlAHIhqjq4a72xt9xQpcn0qVUlIMZg5pRNe/RqtwkaWRxR\nuu4Pzq5lgBYQwOUo5mND10X7UGuIBfpnC/coMpxz3f/zTx0YWxJe1NZ310uDp9Vk\nGegP1se3AgMBAAECggEAAlpnzExLjqOCeATvlsizmYiJ3UnPPAk84K/MWsCnZ1pO\nOt6tUEHQtjzW+4JmL6V+xkmGusaBGQAuS7mAV8QmshTyUbLsjHvfWOwZmbLB5og6\nGm+G+O+coE6c0ls8ZhRtYxeZH48LXpIvr2DrHukl34HeXMWw/F+2Og/DeoYZbR2m\nHh+swqvKNqK7+XlZ1mSmN8iG1d95IrqCwZxw9ng4zldRRAz+FawN5Pd69iTOkMJa\ntjh5jEk26zLRdKuxbGe1LcvFOuOlNInvt+st2qEnBjXMkthgnpRM4v79qgnOrzIB\nKRzRnK73w4xfAvVZDKdoaL/EwuctHijqkKuoj28gKQKBgQDimT9IQB8iMFeLzNgO\np+BLBRyVJRN/cwFZ5Umx7sSPJtKfnfdWIzL7TMx38Diy00Jklk8YdQh/IowEWcb+\nai3WSvOtMMBnoAhGr2kpLafUeOM5Wvmqp6QQBIcM/c4ugZHYKm1AHQEBTOYpLZdD\nhr9lTtUrM12mvjrtx4z8FGs1LwKBgQDHoinHamrM8tADkTVc832C6oWh9aqYhVTT\nXYIr4zuMtNqpOVpvViii5hK8H55Lx0z4/A/pxfpMtjtHJacEMMwqUU/aCCbQi04N\n92c1LFCwDEAOvq+zwaIVaKNmIAM4YkrYjys34Qlb8mGtkAuESqiR4i5tsD02NHPC\n5X6XqfeD+QKBgB453u0eUIjY9fSaAIAD+LFJH0TtyyoHBzkckrX/aYzG2vWbtrBw\nxY4r8mJVUtrXv1V3j1lt0xJSY2b5KsgpFbAuE08Y37Fy8WesYlSx2F9JONYfwon3\nDrVsRS+Ac45UjkXNcwFIXSf1QAZiJHlHciRrXZgDpAxn96hcI/xEJQDVAoGATsjo\nxBJzY77P6Rh9ftl5RxlW87wIP3kfKOtWXAupjLYzNWW1EwtlriQucJ/p0O4uqnSP\nsyq2xV+FtWZeq4C2klzUrq9Y4iSYAVsKGCoNDe1Huon2vXJFjT1mfv9TRgVElIKs\nA7mEAA2ADwcyBFuSe0BQImnTPnkk1l3Lv/8L98ECgYAYWrgrzi2u7a1K2+11zPit\nWolAJSmWy6bh1WQUo+LfV7hlknaflUn/cQ5GO47Ohb63pLWmr9fUIlgD8muHlsp4\nOFGzMXYNJpPJ/pt7XVOQkCbafnSJTGXgip0ORsQRoqJdqPZ9bQdwrjH+sCEqZqPy\nz/oXElem9ku1E6Asc1cm1A==\n-----END PRIVATE KEY-----\n",
+  "client_email": "admin-381@financegenie.iam.gserviceaccount.com",
+  "client_id": "105095421875506435563",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/admin-381%40financegenie.iam.gserviceaccount.com"
+}

@@ -1,21 +1,21 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const firebase = require('firebase/app')
-const firebaseSettings = require('./config/firebase')
-
+const express = require('express');
+const bodyParser = require('body-parser');
+const admin = require('firebase-admin');
+const serviceAccount = require('./config/financegenie-f595de8d1659.json');
 
 const app = express();
-const port = process.env.PORT || 3000
-
-require('firebase/auth')
-require('firebase/database')
-require('./app')(app, firebase);
+const port = process.env.PORT || 3002
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-firebase.initializeApp(firebaseSettings.firebaseConfig)
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+});
 
+var db = admin.firestore();
+
+require('./app')(app, db);
 app.get('/', (req, res) => {
     res.json({"message": "FinanceGenie RESTful API v0.1"})
 });
