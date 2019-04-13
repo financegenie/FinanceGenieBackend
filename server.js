@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const admin = require('firebase-admin');
-const serviceAccount = require('./config/financegenie-f595de8d1659.json');
+const serviceAccount = require('./config/Firebase/financegenie-f595de8d1659.json');
 
 const app = express();
 const port = process.env.PORT || 3004
