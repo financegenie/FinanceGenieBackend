@@ -4,7 +4,7 @@ const admin = require('firebase-admin');
 const serviceAccount = require('./config/financegenie-f595de8d1659.json');
 
 const app = express();
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3004
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -15,7 +15,8 @@ admin.initializeApp({
 
 var db = admin.firestore();
 
-require('./app')(app, db);
+require('./App')(app, db);
+
 app.get('/', (req, res) => {
     res.json({"message": "FinanceGenie RESTful API v0.1"})
 });
@@ -23,3 +24,4 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log('FinanceGenie API live on ' + port);
 })
+
