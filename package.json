@@ -1,0 +1,26 @@
+{
+  "name": "ls",
+  "version": "1.0.0",
+  "description": "Node JS api for finance project",
+  "main": "main.js",
+  "scripts": {
+      "start": "nodemon main.js",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/financegenie/FinanceGenieBackend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/financegenie/FinanceGenieBackend/issues"
+  },
+  "homepage": "https://github.com/financegenie/FinanceGenieBackend#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "firebase": "^5.9.4",
+    "nodemon": "^1.18.11"
+  }
+}
