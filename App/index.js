@@ -1,8 +1,8 @@
 
 const accountIndex = require('./Account/index.js');
-const locationIndex = require('./Location/index.js');
+const transactionIndex = require('./Transaction/index.js');
 
 module.exports = function(app, db) {
-    //locationIndex(app, firebase);
+    transactionIndex(app, db);
     accountIndex(app, db);
 };

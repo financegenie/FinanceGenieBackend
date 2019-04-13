@@ -4,7 +4,7 @@ const admin = require('firebase-admin');
 const serviceAccount = require('./config/Firebase/financegenie-f595de8d1659.json');
 
 const app = express();
-const port = process.env.PORT || 3004
+const port = process.env.PORT || 3005
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

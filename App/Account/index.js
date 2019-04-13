@@ -39,11 +39,9 @@ module.exports = function(app, db) {
                 "Status Code": 400,
                 "Error Message": "Invalid body"
             });
-            return
         }
 
-
-        db.collection('accounts').doc(req.body.access_token).get()
+        db.collection('accounts').doc(req.body.accessToken).get()
             .then(docSnapshot => {
                 if (docSnapshot.exists){
                     res.send({
@@ -53,19 +51,54 @@ module.exports = function(app, db) {
                 }
                 else {
                     db.collection('accounts').doc(req.body.accessToken).set({
-                        uid : req.body.userID,
-                        account_id : req.body.account_id
+                        userID : req.body.userID,
+                        account_id : req.body.accountID
                     }).catch(error => {
                         res.send(error)
                     }).then(() => {
                         res.send({
                             "Status Code": 200,
-                            "account_id": req.body.userID
                         })
                     })
                 }
             }).catch(error => {
                 res.send(error)
+        })
+    });
+
+    app.post('/account/get_linked', (req, res) => {
+        if (!(req && req.body)) {
+            res.send({
+                "Status Code": 400,
+                "Error Message": "Invalid body"
+            });
+        }
+
+        db.collection('accounts').where('userID', '==', req.body.userID).get()
+            .then(snapshot => {
+                if (snapshot.empty) {
+
+                    res.send({
+                        "Status Code": 200,
+                        "Account": [],
+                        "Message": "No account linked"
+                    })
+                }
+                var accounts = []
+                snapshot.forEach(doc => {
+                    console.log(doc.id, '=>', doc.data());
+                    accounts.push( doc.data());
+                });
+                res.send({
+                    "Status Code": 200,
+                    "Account": accounts
+                })
+
+            }).catch(error => {
+                res.send({
+                    "Status Code": 500,
+                    "Error": error
+                })
         })
     });
 
@@ -75,19 +108,19 @@ module.exports = function(app, db) {
                 "Status Code": 400,
                 "Error Message": "Invalid body"
             });
-            return
         }
 
         plaidClient.getBalance(req.body.accessToken, (err, result) => {
-            if (!err) {
+            console.log(result.accounts)
+            if (err) {
                 res.send(err)
             } else{
-                const accounts = result.accounts;
+                const account = result.accounts.find(x => x.account_id === req.body.accountID);
                 res.send({
                     "Status code": 200,
-                    "account_id": accounts["account_id"],
-                    "balance": accounts["balances"],
-                    "name": accounts["name"]
+                    "account_id": account["account_id"],
+                    "balance": account["balances"],
+                    "name": account["name"]
                 })
             }
         })
@@ -120,6 +153,8 @@ module.exports = function(app, db) {
             });
         });
     });
+
+
 
     app.get('/account/', (req, res) => {
         console.log(req.body);
