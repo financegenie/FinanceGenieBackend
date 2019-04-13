@@ -1,6 +1,6 @@
 
 module.exports = function(app, db) {
-    
+
     app.post('/account/insert_user_details', (req, res) => {
         db.collection('users').doc(req.body.userID).set({
             name: req.body.name
@@ -10,6 +10,8 @@ module.exports = function(app, db) {
             res.send({"Status Code": 200})
         })
     });
+
+    app.post('/account/insert_acount')
 
     app.get('/account/', (req, res) => {
         console.log(req.body);
