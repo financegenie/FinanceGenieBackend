@@ -21,9 +21,17 @@ module.exports = function(app, db) {
                 res.send(err)
 
             }
+            if (result != null) {
+                const transactionList = result.transactions.filter(x => x.account_id === req.body.accountID);
+                res.send(transactionList)
+            } else{
+                res.send({
+                    "Status Code": 500,
+                    "Message": "No linked accounts"
+                })
+            }
             console.log(result)
-            const transactions = result.transactions.filter(x => x.account_id === req.body.accountID);
-            res.send(transactions)
+
         });
     })
 }
