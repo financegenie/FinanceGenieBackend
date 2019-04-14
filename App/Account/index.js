@@ -77,9 +77,7 @@ module.exports = function(app, db) {
                 const account = result.accounts.find(x => x.account_id === req.body.accountID);
                 res.send({
                     "Status code": 200,
-                    "account_id": account["account_id"],
-                    "balance": account["balances"],
-                    "name": account["name"]
+                    "account": account
                 })
             }
         })
@@ -155,37 +153,7 @@ module.exports = function(app, db) {
         })
     });
 
-    app.post('/Transaction/get', (req, res) => {
-        if (!(req && req.body)) {
-            res.send({
-                "Status Code": 400,
-                "Error Message": "Invalid body"
-            });
-        }
-        console.log(req.body)
-        console.log(req)
-        plaidClient.getTransactions(req.body.accessToken, req.body.startDate, req.body.endDate, (err, result) => {
-            // Handle err
 
-            if (err){
-                res.send(err)
-
-            }
-            if (result != null) {
-                const transactionList = result.transactions.filter(x => x.account_id === req.body.accountID);
-                res.send(transactionList)
-            } else{
-                res.send({
-                    "Status Code": 500,
-                    "Message": "No linked accounts"
-                })
-            }
-            console.log(result)
-
-        }).catch(error => {
-            res.send(error)
-        })
-    })
 
 
     app.get('/account/', (req, res) => {
