@@ -55,7 +55,7 @@ module.exports = function(app, db) {
             console.log('Access Token: ' + ACCESS_TOKEN);
             console.log('Item ID: ' + ITEM_ID);
             res.send({
-                'error': false,
+                'Status Code': 200,
                 'Access Token': ACCESS_TOKEN,
             });
         });
