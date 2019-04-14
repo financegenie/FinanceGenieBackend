@@ -15,6 +15,7 @@ module.exports = function(app, db) {
             });
         }
         console.log(req.body)
+        console.log(req)
         plaidClient.getTransactions(req.body.accessToken, req.body.startDate, req.body.endDate, (err, result) => {
             // Handle err
 
