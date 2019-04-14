@@ -102,9 +102,13 @@ module.exports = function(app, db) {
                     db.collection('accounts').doc(req.body.accessToken).set({
                         userID : req.body.userID,
                         accountID : req.body.accountID,
-                        accessToken : req.body.accessToken
+                        accessToken : req.body.accessToken,
+                        institutionID: req.body.institutionID
                     }).catch(error => {
-                        res.send(error)
+                        res.send({
+                            "Status Code": 400,
+                            "Error": error
+                        })
                     }).then(() => {
                         res.send({
                             "Status Code": 200,
@@ -152,7 +156,29 @@ module.exports = function(app, db) {
         })
     });
 
+    app.post('/institution/get_by_id', (req, res) => {
+        if (!(req && req.body)) {
+            res.send({
+                "Status Code": 400,
+                "Error Message": "Invalid body"
+            });
+        }
 
+        plaidClient.getInstitutionById(req.body.InstitutionID, (err, result) => {
+            if (err != null) {
+                res.send({
+                    "Status Code": 500,
+                    "Error": err
+                })
+            } else {
+                res.send({
+                    "Status Code": 200,
+                    "Result": result.institution
+                })
+
+            }
+        })
+    });
 
 
     app.get('/account/', (req, res) => {
