@@ -70,7 +70,6 @@ module.exports = function(app, db) {
         }
 
         plaidClient.getBalance(req.body.accessToken, (err, result) => {
-            console.log(result.accounts)
             if (err) {
                 res.send(err)
             } else{
