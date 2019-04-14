@@ -22,6 +22,7 @@ module.exports = function(app, db) {
 
             }
             if (result != null) {
+                console.log(result.transactions)
                 const transactionList = result.transactions.filter(x => x.account_id === req.body.accountID);
                 res.send(transactionList)
             } else{
